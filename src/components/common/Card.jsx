@@ -4,24 +4,21 @@ import CardHeader from '@mui/material/CardHeader';
 import CardMedia from '@mui/material/CardMedia';
 import CardContent from '@mui/material/CardContent';
 import CardActions from '@mui/material/CardActions';
-
 import Avatar from '@mui/material/Avatar';
 import IconButton from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
-import { red } from '@mui/material/colors';
+import { purple } from '@mui/material/colors';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import ShareIcon from '@mui/icons-material/Share';
-
 import MoreVertIcon from '@mui/icons-material/MoreVert';
 
-
-export default function RecipeReviewCard() {
+const RecipeReviewCard = ({ title, subheader, image, content, avatarInitial }) => {
   return (
-    <Card sx={{ alignItems:'center'}}>
+    <Card sx={{ alignItems: 'center' }}>
       <CardHeader
         avatar={
-          <Avatar sx={{ bgcolor: red[500] }} aria-label="recipe">
-            R
+          <Avatar sx={{ bgcolor: purple[500] }} aria-label="recipe">
+            {avatarInitial}
           </Avatar>
         }
         action={
@@ -29,20 +26,18 @@ export default function RecipeReviewCard() {
             <MoreVertIcon />
           </IconButton>
         }
-        title="Shrimp and Chorizo Paella"
-        subheader="September 14, 2024"
+        title={title}
+        subheader={subheader}
       />
       <CardMedia
         component="img"
-        height= "400px"
-        image="https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg?cs=srgb&dl=pexels-ella-olsson-572949-1640777.jpg&fm=jpg"
-        alt="Paella dish"
+        height="300px"
+        image={image}
+        alt={title}
       />
       <CardContent>
         <Typography variant="body2" sx={{ color: 'text.secondary' }}>
-          This impressive paella is a perfect party dish and a fun meal to cook
-          together with your guests. Add 1 cup of frozen peas along with the mussels,
-          if you like.
+          {content}
         </Typography>
       </CardContent>
       <CardActions disableSpacing>
@@ -55,4 +50,6 @@ export default function RecipeReviewCard() {
       </CardActions>
     </Card>
   );
-}
+};
+
+export default RecipeReviewCard;
