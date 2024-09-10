@@ -4,6 +4,7 @@ import ResponsiveAppBar from "../components/layouts/Navbar";
 import { Box } from "@mui/material";
 import HeroSection from "../components/layouts/HeroSection";
 import FeatureSection from "../components/layouts/FeatureSection";
+import LeadCaptureForm from "../components/layouts/LeadCaptureForm";
 
 
 function Dashboard() {
@@ -30,6 +31,7 @@ function Dashboard() {
         </Box>
         <Box sx={{width:1}}>
         <FeatureSection />
+        <LeadCaptureForm />
         </Box>
       </Box>
     </>
